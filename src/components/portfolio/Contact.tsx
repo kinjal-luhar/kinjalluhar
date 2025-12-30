@@ -54,17 +54,23 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="section-padding" ref={ref}>
-      <div className="max-w-7xl mx-auto">
+    <section id="contact" className="section-padding relative overflow-hidden" ref={ref}>
+      {/* Background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-accent/5" />
+      
+      <div className="max-w-7xl mx-auto relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <span className="text-primary font-medium tracking-wider uppercase text-sm">
+          <span className="text-primary font-semibold tracking-[0.2em] uppercase text-sm">
             Get In Touch
           </span>
-          <h2 className="heading-section mt-4">Let's Work Together</h2>
+          <h2 className="heading-section mt-4">
+            Let's Work <span className="gradient-text">Together</span>
+          </h2>
           <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
             Have a project in mind? I'd love to hear about it. Send me a message and let's create something amazing together.
           </p>
@@ -77,7 +83,7 @@ const Contact = () => {
             onSubmit={handleSubmit}
             initial={{ opacity: 0, x: -50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ delay: 0.2 }}
+            transition={{ delay: 0.2, duration: 0.8 }}
             className="card-premium p-8"
           >
             <div className="grid sm:grid-cols-2 gap-6 mb-6">
@@ -91,7 +97,7 @@ const Contact = () => {
                   required
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all"
+                  className="w-full px-4 py-3.5 bg-muted/50 border border-border rounded-xl focus:ring-2 focus:ring-primary/30 focus:border-primary outline-none transition-all placeholder:text-muted-foreground/50"
                   placeholder="John Doe"
                 />
               </div>
@@ -105,7 +111,7 @@ const Contact = () => {
                   required
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all"
+                  className="w-full px-4 py-3.5 bg-muted/50 border border-border rounded-xl focus:ring-2 focus:ring-primary/30 focus:border-primary outline-none transition-all placeholder:text-muted-foreground/50"
                   placeholder="john@example.com"
                 />
               </div>
@@ -121,7 +127,7 @@ const Contact = () => {
                 required
                 value={formData.subject}
                 onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all"
+                className="w-full px-4 py-3.5 bg-muted/50 border border-border rounded-xl focus:ring-2 focus:ring-primary/30 focus:border-primary outline-none transition-all placeholder:text-muted-foreground/50"
                 placeholder="Project Inquiry"
               />
             </div>
@@ -136,14 +142,16 @@ const Contact = () => {
                 rows={5}
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all resize-none"
+                className="w-full px-4 py-3.5 bg-muted/50 border border-border rounded-xl focus:ring-2 focus:ring-primary/30 focus:border-primary outline-none transition-all resize-none placeholder:text-muted-foreground/50"
                 placeholder="Tell me about your project..."
               />
             </div>
 
-            <button
+            <motion.button
               type="submit"
               disabled={isSubmitting}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
               className="btn-primary w-full flex items-center justify-center gap-2 disabled:opacity-70"
             >
               {isSubmitting ? (
@@ -157,71 +165,81 @@ const Contact = () => {
                   Send Message
                 </>
               )}
-            </button>
+            </motion.button>
           </motion.form>
 
           {/* Contact Info & Photo */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ delay: 0.3 }}
+            transition={{ delay: 0.4, duration: 0.8 }}
             className="space-y-8"
           >
             {/* Photo */}
-            <div className="relative">
-              <div className="absolute -inset-4 bg-gradient-to-tr from-primary/10 to-secondary/10 rounded-2xl blur-2xl" />
-              <div className="relative image-frame aspect-[4/3] max-w-md mx-auto lg:mx-0 overflow-hidden rounded-2xl">
+            <div className="relative group">
+              <div className="absolute -inset-4 bg-gradient-to-tr from-primary/20 via-accent/10 to-secondary/20 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+              <div className="relative image-frame aspect-[4/3] max-w-md mx-auto lg:mx-0 overflow-hidden rounded-3xl">
                 <img
                   src={contactPhoto}
                   alt="Kinjal Luhar - Contact"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
               </div>
             </div>
 
             {/* Contact Details */}
             <div className="space-y-4">
-              <div className="flex items-center gap-4 text-muted-foreground">
-                <div className="p-3 bg-primary/10 rounded-lg text-primary">
+              <motion.div 
+                whileHover={{ x: 5 }}
+                className="flex items-center gap-4 p-4 rounded-2xl bg-card border border-border hover:border-primary/30 transition-all"
+              >
+                <div className="p-3 bg-gradient-to-br from-primary to-accent rounded-xl text-white">
                   <Mail size={20} />
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Email</p>
                   <p className="font-medium text-foreground">contact@kinjalluhar.com</p>
                 </div>
-              </div>
+              </motion.div>
 
-              <div className="flex items-center gap-4 text-muted-foreground">
-                <div className="p-3 bg-primary/10 rounded-lg text-primary">
+              <motion.div 
+                whileHover={{ x: 5 }}
+                className="flex items-center gap-4 p-4 rounded-2xl bg-card border border-border hover:border-primary/30 transition-all"
+              >
+                <div className="p-3 bg-gradient-to-br from-secondary to-primary rounded-xl text-white">
                   <MapPin size={20} />
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Location</p>
                   <p className="font-medium text-foreground">India</p>
                 </div>
-              </div>
+              </motion.div>
             </div>
 
             {/* Social Links */}
             <div>
               <p className="text-sm text-muted-foreground mb-4">Follow me on</p>
               <div className="flex gap-4">
-                <a
+                <motion.a
                   href="https://www.linkedin.com/in/kinjal-luhar/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 bg-card border border-border rounded-lg text-muted-foreground hover:text-primary hover:border-primary/50 transition-colors"
+                  whileHover={{ scale: 1.1, y: -2 }}
+                  whileTap={{ scale: 0.9 }}
+                  className="p-4 bg-card border border-border rounded-2xl text-muted-foreground hover:text-primary hover:border-primary/50 hover:bg-primary/5 transition-all"
                 >
                   <Linkedin size={24} />
-                </a>
-                <a
+                </motion.a>
+                <motion.a
                   href="https://github.com/kinjal-luhar"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 bg-card border border-border rounded-lg text-muted-foreground hover:text-primary hover:border-primary/50 transition-colors"
+                  whileHover={{ scale: 1.1, y: -2 }}
+                  whileTap={{ scale: 0.9 }}
+                  className="p-4 bg-card border border-border rounded-2xl text-muted-foreground hover:text-primary hover:border-primary/50 hover:bg-primary/5 transition-all"
                 >
                   <Github size={24} />
-                </a>
+                </motion.a>
               </div>
             </div>
           </motion.div>
