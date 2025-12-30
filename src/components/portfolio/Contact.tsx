@@ -3,6 +3,7 @@ import { useRef, useState } from "react";
 import { Send, Linkedin, Github, Mail, MapPin, Loader2 } from "lucide-react";
 import emailjs from "@emailjs/browser";
 import { useToast } from "@/hooks/use-toast";
+import contactPhoto from "@/assets/photo-contact.jpg";
 
 const Contact = () => {
   const ref = useRef(null);
@@ -169,11 +170,11 @@ const Contact = () => {
             {/* Photo */}
             <div className="relative">
               <div className="absolute -inset-4 bg-gradient-to-tr from-primary/10 to-secondary/10 rounded-2xl blur-2xl" />
-              <div className="relative image-frame aspect-[4/3] max-w-md mx-auto lg:mx-0 overflow-hidden">
+              <div className="relative image-frame aspect-[4/3] max-w-md mx-auto lg:mx-0 overflow-hidden rounded-2xl">
                 <img
-                  src="/photo4.jpg"
+                  src={contactPhoto}
                   alt="Kinjal Luhar - Contact"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                 />
               </div>
             </div>
@@ -206,7 +207,7 @@ const Contact = () => {
               <p className="text-sm text-muted-foreground mb-4">Follow me on</p>
               <div className="flex gap-4">
                 <a
-                  href="https://linkedin.com/in/kinjalluhar"
+                  href="https://www.linkedin.com/in/kinjal-luhar/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-3 bg-card border border-border rounded-lg text-muted-foreground hover:text-primary hover:border-primary/50 transition-colors"
@@ -214,7 +215,7 @@ const Contact = () => {
                   <Linkedin size={24} />
                 </a>
                 <a
-                  href="https://github.com/kinjalluhar"
+                  href="https://github.com/kinjal-luhar"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-3 bg-card border border-border rounded-lg text-muted-foreground hover:text-primary hover:border-primary/50 transition-colors"

@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
+import aboutPhoto from "@/assets/photo-about.jpg";
 
 const highlights = [
   "MSc IT Student",
@@ -25,11 +26,11 @@ const About = () => {
             className="relative"
           >
             <div className="absolute -inset-4 bg-gradient-to-tr from-primary/10 to-secondary/10 rounded-2xl blur-2xl" />
-            <div className="relative image-frame aspect-[4/5] max-w-md mx-auto lg:mx-0">
+            <div className="relative image-frame aspect-[4/5] max-w-md mx-auto lg:mx-0 overflow-hidden rounded-2xl">
               <img
-                src="/photo2.jpg"
+                src={aboutPhoto}
                 alt="Kinjal Luhar - Professional Photo"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
               />
             </div>
           </motion.div>

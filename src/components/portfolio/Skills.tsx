@@ -1,5 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import skillsPhoto from "@/assets/photo-skills.jpg";
 
 const skillCategories = [
   {
@@ -44,11 +45,11 @@ const Skills = () => {
             className="relative order-2 lg:order-1"
           >
             <div className="absolute -inset-4 bg-gradient-to-br from-secondary/10 to-primary/10 rounded-2xl blur-2xl" />
-            <div className="relative image-frame aspect-[3/4] max-w-md mx-auto lg:mx-0">
+            <div className="relative image-frame aspect-[3/4] max-w-md mx-auto lg:mx-0 overflow-hidden rounded-2xl">
               <img
-                src="/photo3.jpg"
+                src={skillsPhoto}
                 alt="Kinjal Luhar - Skills & Expertise"
-                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500 hover:scale-105"
               />
             </div>
           </motion.div>
