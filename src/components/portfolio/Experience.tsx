@@ -38,53 +38,73 @@ const Experience = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="experience" className="section-padding" ref={ref}>
-      <div className="max-w-4xl mx-auto">
+    <section id="experience" className="section-padding relative overflow-hidden" ref={ref}>
+      {/* Background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-accent/5 to-transparent" />
+      
+      <div className="max-w-4xl mx-auto relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <span className="text-primary font-medium tracking-wider uppercase text-sm">
+          <span className="text-primary font-semibold tracking-[0.2em] uppercase text-sm">
             Career Journey
           </span>
-          <h2 className="heading-section mt-4">Professional Experience</h2>
+          <h2 className="heading-section mt-4">
+            Professional <span className="gradient-text">Experience</span>
+          </h2>
         </motion.div>
 
         <div className="relative">
           {/* Timeline line */}
-          <div className="absolute left-8 top-0 bottom-0 w-px bg-border hidden md:block" />
+          <motion.div 
+            initial={{ scaleY: 0 }}
+            animate={isInView ? { scaleY: 1 } : {}}
+            transition={{ duration: 1.5, ease: "easeOut" }}
+            className="absolute left-8 top-0 bottom-0 w-px bg-gradient-to-b from-primary via-accent to-secondary hidden md:block origin-top" 
+          />
 
           <div className="space-y-8">
             {experiences.map((exp, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, x: -30 }}
+                initial={{ opacity: 0, x: -50 }}
                 animate={isInView ? { opacity: 1, x: 0 } : {}}
-                transition={{ delay: index * 0.15 }}
+                transition={{ delay: index * 0.2, duration: 0.6 }}
                 className="relative pl-0 md:pl-20"
               >
                 {/* Timeline dot */}
-                <div className="absolute left-6 top-6 w-4 h-4 bg-primary rounded-full border-4 border-background hidden md:block" />
+                <motion.div 
+                  initial={{ scale: 0 }}
+                  animate={isInView ? { scale: 1 } : {}}
+                  transition={{ delay: index * 0.2 + 0.3, duration: 0.4, type: "spring" }}
+                  className="absolute left-[22px] top-8 w-5 h-5 bg-gradient-to-br from-primary to-accent rounded-full border-4 border-background hidden md:block shadow-lg shadow-primary/30" 
+                />
 
-                <div className="card-premium p-6 hover:border-primary/30 group">
+                <div className="card-premium p-6 group hover:scale-[1.02] transition-all duration-500">
                   <div className="flex flex-wrap items-start justify-between gap-4 mb-4">
-                    <div className="flex items-center gap-3">
-                      <div className="p-2 bg-primary/10 rounded-lg text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                        <Briefcase size={20} />
-                      </div>
+                    <div className="flex items-center gap-4">
+                      <motion.div 
+                        whileHover={{ rotate: 360 }}
+                        transition={{ duration: 0.5 }}
+                        className="p-3 bg-primary/10 rounded-xl text-primary group-hover:bg-gradient-to-br group-hover:from-primary group-hover:to-accent group-hover:text-primary-foreground transition-all duration-500"
+                      >
+                        <Briefcase size={22} />
+                      </motion.div>
                       <div>
-                        <h3 className="font-semibold text-lg text-foreground">
+                        <h3 className="font-display font-semibold text-lg text-foreground">
                           {exp.role}
                         </h3>
                         <p className="text-primary font-medium">{exp.company}</p>
                       </div>
                     </div>
-                    <span className="text-sm text-muted-foreground bg-muted px-3 py-1 rounded-full">
+                    <span className="text-sm text-muted-foreground bg-muted/50 px-4 py-1.5 rounded-full border border-border">
                       {exp.period}
                     </span>
                   </div>
-                  <p className="text-muted-foreground">{exp.description}</p>
+                  <p className="text-muted-foreground leading-relaxed">{exp.description}</p>
                 </div>
               </motion.div>
             ))}
