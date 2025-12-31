@@ -26,121 +26,83 @@ const Hero = () => {
         className="absolute bottom-20 left-20 w-80 h-80 bg-accent/20 rounded-full blur-[100px]" 
       />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full pt-24">
         {/* Main Hero Container */}
         <div className="relative flex flex-col items-center">
           
-          {/* Name Behind - KINJAL - Slides from LEFT */}
+          {/* Name - KINJAL LUHAR - Single Line */}
           <motion.h1
-            initial={{ x: "-150%", opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
+            initial={{ opacity: 0, y: -30 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ 
-              duration: 1.8, 
+              duration: 1.2, 
               ease: [0.25, 0.46, 0.45, 0.94], 
               delay: 0.3 
             }}
-            className="absolute top-[5%] left-0 right-0 text-[16vw] md:text-[14vw] lg:text-[11vw] font-black leading-none tracking-tighter text-center font-display select-none pointer-events-none"
-            style={{ zIndex: 1 }}
+            className="text-[12vw] md:text-[10vw] lg:text-[8vw] font-black leading-none tracking-tighter text-center font-display select-none"
           >
-            <span className="gradient-text animate-gradient-text">Kinjal</span>
+            <span className="gradient-text animate-gradient-text">Kinjal Luhar</span>
           </motion.h1>
 
-          {/* Photo - Vertical Pendulum Swing Effect attached to header */}
+          {/* Photo - Compact with no extra space */}
           <motion.div
-            initial={{ opacity: 0, y: -200 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.4, ease: [0.34, 1.56, 0.64, 1], delay: 0.8 }}
-            className="relative flex flex-col items-center"
-            style={{ zIndex: 5 }}
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, ease: [0.34, 1.56, 0.64, 1], delay: 0.6 }}
+            className="relative my-4"
           >
-            {/* Swing ropes connecting directly to header border */}
-            <div className="absolute -top-[68px] left-[22%] w-[3px] h-[68px] bg-gradient-to-b from-foreground via-foreground/60 to-foreground/30 rounded-full" />
-            <div className="absolute -top-[68px] right-[22%] w-[3px] h-[68px] bg-gradient-to-b from-foreground via-foreground/60 to-foreground/30 rounded-full" />
+            {/* Glow effect behind image */}
+            <div className="absolute inset-0 bg-gradient-to-b from-primary/30 via-accent/20 to-transparent blur-3xl scale-110" />
             
-            {/* Vertical Only Swing Animation - pure up and down motion */}
-            <motion.div
-              animate={{ 
-                y: [0, 20, 0, -15, 0],
-              }}
-              transition={{ 
-                duration: 2.5, 
-                repeat: Infinity, 
-                ease: "easeInOut" 
-              }}
-            >
-              {/* Glow effect behind image */}
-              <div className="absolute inset-0 bg-gradient-to-b from-primary/30 via-accent/20 to-transparent blur-3xl scale-125" />
-              
-              <img
-                src={heroPhoto}
-                alt="Kinjal Luhar - Software Developer"
-                className="relative w-[280px] h-auto md:w-[380px] lg:w-[420px] object-contain drop-shadow-2xl"
-              />
-            </motion.div>
+            <img
+              src={heroPhoto}
+              alt="Kinjal Luhar - Software Developer"
+              className="relative w-[200px] h-auto md:w-[280px] lg:w-[320px] object-contain drop-shadow-2xl"
+            />
           </motion.div>
 
-          {/* Name - LUHAR - Under the photo */}
-          <motion.h1
-            initial={{ x: "150%", opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ 
-              duration: 1.8, 
-              ease: [0.25, 0.46, 0.45, 0.94], 
-              delay: 0.5 
-            }}
-            className="text-[16vw] md:text-[14vw] lg:text-[11vw] font-black leading-none tracking-tighter text-center font-display select-none pointer-events-none -mt-[20vw] md:-mt-[16vw] lg:-mt-[12vw]"
-            style={{ zIndex: 10 }}
+          {/* Software Developer Title - Prominent */}
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1, duration: 0.8 }}
+            className="text-[8vw] md:text-[6vw] lg:text-[5vw] font-black tracking-tight text-center font-display"
           >
-            <span className="gradient-text animate-gradient-text">Luhar</span>
-          </motion.h1>
+            <span className="gradient-text animate-gradient-text">Software Developer</span>
+          </motion.h2>
 
-          {/* Content Below Photo - Right after Luhar */}
-          <div className="relative z-20 flex flex-col items-center mt-4">
-            {/* Software Developer Title - Styled like name but smaller */}
-            <motion.h2
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.6, duration: 0.8 }}
-              className="text-[6vw] md:text-[4vw] lg:text-[3vw] font-black tracking-tight text-center font-display"
-            >
-              <span className="gradient-text animate-gradient-text">Software Developer</span>
-            </motion.h2>
+          {/* Tagline */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.2, duration: 0.8 }}
+            className="text-sm md:text-base text-muted-foreground max-w-xl text-center mt-2 px-4"
+          >
+            Building intelligent, scalable applications that bridge innovation with real-world impact
+          </motion.p>
 
-            {/* Tagline */}
-            <motion.p
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.8, duration: 0.8 }}
-              className="text-body text-muted-foreground max-w-2xl text-center mt-3 px-4"
+          {/* CTA Buttons */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.4, duration: 0.8 }}
+            className="flex flex-col sm:flex-row gap-3 mt-4"
+          >
+            <a href="#projects" className="btn-primary text-sm py-2 px-4">
+              View My Work
+            </a>
+            <a 
+              href="/resume/Kinjal-Luhar-Resume.pdf" 
+              download="Kinjal-Luhar-Resume.pdf"
+              className="btn-outline flex items-center gap-2 text-sm py-2 px-4"
             >
-              Building intelligent, scalable applications that bridge innovation with real-world impact
-            </motion.p>
-
-            {/* CTA Buttons */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 2, duration: 0.8 }}
-              className="flex flex-col sm:flex-row gap-4 mt-6"
-            >
-              <a href="#projects" className="btn-primary">
-                View My Work
-              </a>
-              <a 
-                href="/resume/Kinjal-Luhar-Resume.pdf" 
-                download
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-outline flex items-center gap-2"
-              >
-                <Download size={18} />
-                Download Resume
-              </a>
-              <a href="#contact" className="btn-outline">
-                Get In Touch
-              </a>
-            </motion.div>
-          </div>
+              <Download size={16} />
+              Download Resume
+            </a>
+            <a href="#contact" className="btn-outline text-sm py-2 px-4">
+              Get In Touch
+            </a>
+          </motion.div>
         </div>
       </div>
 
@@ -148,16 +110,16 @@ const Hero = () => {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 2.5 }}
-        className="flex justify-center mt-8"
+        transition={{ delay: 1.8 }}
+        className="flex justify-center mt-4"
       >
         <motion.div
-          animate={{ y: [0, 12, 0] }}
+          animate={{ y: [0, 8, 0] }}
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
           className="flex flex-col items-center text-muted-foreground"
         >
-          <span className="text-xs mb-2 tracking-[0.3em] uppercase">Scroll</span>
-          <ChevronDown size={18} className="text-primary" />
+          <span className="text-xs mb-1 tracking-[0.2em] uppercase">Scroll</span>
+          <ChevronDown size={16} className="text-primary" />
         </motion.div>
       </motion.div>
     </section>
