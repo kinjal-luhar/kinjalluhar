@@ -26,7 +26,7 @@ const Hero = () => {
         className="absolute bottom-20 left-20 w-80 h-80 bg-accent/20 rounded-full blur-[100px]" 
       />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full pt-24">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full pt-20">
         {/* Main Hero Container */}
         <div className="relative flex flex-col items-center">
           
@@ -39,17 +39,17 @@ const Hero = () => {
               ease: [0.25, 0.46, 0.45, 0.94], 
               delay: 0.3 
             }}
-            className="text-[11vw] md:text-[9vw] lg:text-[7vw] font-black leading-none tracking-tighter text-center font-display select-none"
+            className="text-[17vw] md:text-[15vw] lg:text-[13vw] font-black leading-[1.1] tracking-tighter text-center font-display select-none"
           >
             <span className="gradient-text animate-gradient-text">Kinjal Luhar</span>
           </motion.h1>
 
-          {/* Photo - With swing animation */}
+          {/* Photo - Attached to name, no gap */}
           <motion.div
             initial={{ opacity: 0, y: -100 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, ease: [0.34, 1.56, 0.64, 1], delay: 0.6 }}
-            className="relative -mt-4"
+            className="relative -mt-[8vw]"
           >
             {/* Vertical Swing Animation */}
             <motion.div
@@ -73,12 +73,12 @@ const Hero = () => {
             </motion.div>
           </motion.div>
 
-          {/* Software Developer Title - No gap */}
+          {/* Software Developer Title - Directly under image */}
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1, duration: 0.8 }}
-            className="-mt-8 text-[8vw] md:text-[6vw] lg:text-[5vw] font-black tracking-tight text-center font-display"
+            className="-mt-[6vw] text-[8vw] md:text-[6vw] lg:text-[5vw] font-black tracking-tight text-center font-display"
           >
             <span className="gradient-text animate-gradient-text">Software Developer</span>
           </motion.h2>
