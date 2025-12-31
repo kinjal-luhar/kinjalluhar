@@ -33,17 +33,16 @@ const Languages = () => {
       <div className="max-w-5xl mx-auto px-6 lg:px-12 relative z-10" ref={ref}>
         {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.8 }}
           className="text-center mb-12"
         >
-          <span className="text-primary text-sm font-medium tracking-[0.3em] uppercase mb-4 block">
+          <span className="text-primary font-semibold tracking-[0.2em] uppercase text-sm">
             Communication
           </span>
-          <h2 className="text-display font-display font-bold gradient-text flex items-center justify-center gap-3">
-            <Globe className="w-10 h-10" />
-            Languages Known
+          <h2 className="heading-section mt-4">
+            Languages <span className="gradient-text">Known</span>
           </h2>
         </motion.div>
 

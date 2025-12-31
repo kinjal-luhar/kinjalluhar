@@ -11,7 +11,6 @@ const navItems = [
   { label: "Languages", href: "#languages" },
   { label: "Certifications", href: "#certifications" },
   { label: "Services", href: "#services" },
-  { label: "Contact", href: "#contact" },
 ];
 
 const Navigation = () => {
