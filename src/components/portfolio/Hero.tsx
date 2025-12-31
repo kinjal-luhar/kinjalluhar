@@ -4,9 +4,7 @@ import heroPhoto from "@/assets/photo-hero.png";
 
 const roles = [
   "AI Engineer",
-  "Blockchain Developer",
   "Full-Stack Developer",
-  "ML Specialist",
 ];
 
 const Hero = () => {
@@ -96,13 +94,13 @@ const Hero = () => {
               <img
                 src={heroPhoto}
                 alt="Kinjal Luhar - AI Engineer and Full-Stack Developer"
-                className="relative w-[320px] h-auto md:w-[450px] lg:w-[520px] object-contain drop-shadow-2xl"
+                className="relative w-[380px] h-auto md:w-[520px] lg:w-[600px] object-contain drop-shadow-2xl"
               />
             </motion.div>
           </motion.div>
 
           {/* Content Below Photo - Right after photo */}
-          <div className="relative z-20 flex flex-col items-center -mt-2">
+          <div className="relative z-20 flex flex-col items-center -mt-8">
             {/* Rotating Roles - bigger and more visible */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
