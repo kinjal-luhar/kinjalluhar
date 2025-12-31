@@ -38,7 +38,7 @@ const Hero = () => {
           ease: [0.25, 0.46, 0.45, 0.94],
           delay: 0.3
         }} className="text-[11vw] md:text-[9vw] lg:text-[7vw] font-black leading-none tracking-tighter text-center font-display select-none">
-            <span className="gradient-text animate-gradient-text text-8xl">Kinjal Luhar</span>
+            <span className="gradient-text animate-gradient-text text-9xl">Kinjal Luhar</span>
           </motion.h1>
 
           {/* Photo - With swing animation */}
@@ -64,7 +64,7 @@ const Hero = () => {
               {/* Glow effect behind image */}
               <div className="absolute inset-0 bg-gradient-to-b from-primary/30 via-accent/20 to-transparent blur-3xl scale-110" />
               
-              <img src={heroPhoto} alt="Kinjal Luhar - Software Developer" className="relative w-[440px] h-auto md:w-[420px] lg:w-[480px] object-contain drop-shadow-2xl" />
+              <img alt="Kinjal Luhar - Software Developer" className="relative w-[440px] h-auto md:w-[420px] lg:w-[480px] object-contain drop-shadow-2xl" src="/lovable-uploads/c3cb1b8d-825e-4d8d-a9ef-5f87e2bd3570.png" />
             </motion.div>
           </motion.div>
 
