@@ -6,8 +6,8 @@ const experiences = [
   {
     role: "Python/Full-Stack Developer",
     company: "Freelance",
-    period: "Nov 2022 - Present",
-    duration: "2+ Years",
+    period: "Nov 2025 - Present",
+    duration: "2 Months",
     description:
       "Delivering custom web solutions, automation scripts, and AI-powered applications for diverse clients worldwide.",
   },
