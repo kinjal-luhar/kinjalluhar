@@ -11,7 +11,7 @@ const projects = [
     tech: ["Python", "TensorFlow", "React", "PostgreSQL"],
     gradient: "from-purple-500 to-pink-500",
     driveLink: "https://drive.google.com/file/d/17OL5uiKzpLlfXr4uqhiecBynMhf8sfed/view",
-    coverImage: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800&h=450&fit=crop",
+    coverImage: "https://images.unsplash.com/photo-1559757175-5700dde675bc?w=800&h=450&fit=crop",
   },
   {
     title: "Smart Kisan",
