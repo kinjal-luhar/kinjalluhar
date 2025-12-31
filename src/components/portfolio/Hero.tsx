@@ -43,53 +43,60 @@ const Hero = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full">
         {/* Main Hero Container */}
-        <div className="relative flex flex-col items-center justify-center min-h-screen pt-20">
+        <div className="relative flex flex-col items-center justify-center min-h-screen pt-24">
           
-          {/* Name Behind - KINJAL (z-index lower than photo) */}
+          {/* Name Behind - KINJAL - Slides from LEFT */}
           <motion.h1
-            initial={{ x: "-120%", opacity: 0 }}
+            initial={{ x: "-150%", opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 1.4, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.2 }}
-            className="absolute top-[20%] left-0 right-0 text-[24vw] md:text-[18vw] lg:text-[15vw] font-extrabold leading-none tracking-tighter text-center font-display select-none pointer-events-none"
+            transition={{ 
+              duration: 1.8, 
+              ease: [0.25, 0.46, 0.45, 0.94], 
+              delay: 0.3 
+            }}
+            className="absolute top-[22%] left-0 right-0 text-[26vw] md:text-[20vw] lg:text-[16vw] font-black leading-none tracking-tighter text-center font-display select-none pointer-events-none"
             style={{ zIndex: 1 }}
           >
             <span className="gradient-text animate-gradient-text">Kinjal</span>
           </motion.h1>
 
-          {/* Name Behind - LUHAR (z-index lower than photo) */}
+          {/* Name Behind - LUHAR - Slides from RIGHT */}
           <motion.h1
-            initial={{ x: "120%", opacity: 0 }}
+            initial={{ x: "150%", opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 1.4, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.4 }}
-            className="absolute bottom-[25%] left-0 right-0 text-[24vw] md:text-[18vw] lg:text-[15vw] font-extrabold leading-none tracking-tighter text-center font-display text-foreground select-none pointer-events-none"
+            transition={{ 
+              duration: 1.8, 
+              ease: [0.25, 0.46, 0.45, 0.94], 
+              delay: 0.5 
+            }}
+            className="absolute bottom-[28%] left-0 right-0 text-[26vw] md:text-[20vw] lg:text-[16vw] font-black leading-none tracking-tighter text-center font-display text-foreground select-none pointer-events-none"
             style={{ zIndex: 1 }}
           >
             Luhar
           </motion.h1>
 
-          {/* Photo - In Front (z-index higher than names) */}
+          {/* Photo - In Front with Vertical Swing Effect */}
           <motion.div
-            initial={{ opacity: 0, y: -100 }}
+            initial={{ opacity: 0, y: -150 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.2, ease: [0.34, 1.56, 0.64, 1], delay: 0.6 }}
+            transition={{ duration: 1.4, ease: [0.34, 1.56, 0.64, 1], delay: 0.8 }}
             className="relative flex flex-col items-center"
             style={{ zIndex: 5 }}
           >
-            {/* Swing ropes connecting to top */}
-            <div className="absolute -top-[150px] md:-top-[200px] lg:-top-[250px] left-[18%] w-[3px] h-[150px] md:h-[200px] lg:h-[250px] bg-gradient-to-b from-muted-foreground/10 via-muted-foreground/30 to-muted-foreground/50 rounded-full" />
-            <div className="absolute -top-[150px] md:-top-[200px] lg:-top-[250px] right-[18%] w-[3px] h-[150px] md:h-[200px] lg:h-[250px] bg-gradient-to-b from-muted-foreground/10 via-muted-foreground/30 to-muted-foreground/50 rounded-full" />
+            {/* Swing ropes connecting to header */}
+            <div className="absolute -top-[180px] md:-top-[220px] lg:-top-[260px] left-[16%] w-[3px] h-[180px] md:h-[220px] lg:h-[260px] bg-gradient-to-b from-white/20 via-white/40 to-white/60 rounded-full" />
+            <div className="absolute -top-[180px] md:-top-[220px] lg:-top-[260px] right-[16%] w-[3px] h-[180px] md:h-[220px] lg:h-[260px] bg-gradient-to-b from-white/20 via-white/40 to-white/60 rounded-full" />
             
-            {/* Subtle swing animation */}
+            {/* Vertical Swing Animation (up and down like real swing) */}
             <motion.div
               animate={{ 
-                rotate: [0, 1, 0, -1, 0],
+                y: [0, -15, 0, 15, 0],
               }}
               transition={{ 
-                duration: 5, 
+                duration: 4, 
                 repeat: Infinity, 
                 ease: "easeInOut" 
               }}
-              className="origin-top"
             >
               {/* Glow effect behind image */}
               <div className="absolute inset-0 bg-gradient-to-b from-primary/30 via-accent/20 to-transparent blur-3xl scale-125" />
@@ -97,7 +104,7 @@ const Hero = () => {
               <img
                 src={heroPhoto}
                 alt="Kinjal Luhar - AI Engineer and Full-Stack Developer"
-                className="relative w-[320px] h-auto md:w-[450px] lg:w-[520px] object-contain drop-shadow-2xl"
+                className="relative w-[340px] h-auto md:w-[480px] lg:w-[550px] object-contain drop-shadow-2xl"
               />
             </motion.div>
           </motion.div>
@@ -108,7 +115,7 @@ const Hero = () => {
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.4, duration: 0.8 }}
+              transition={{ delay: 1.6, duration: 0.8 }}
               className="h-8 overflow-hidden"
             >
               <div className="animate-text-rotate">
@@ -127,7 +134,7 @@ const Hero = () => {
             <motion.p
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.6, duration: 0.8 }}
+              transition={{ delay: 1.8, duration: 0.8 }}
               className="text-body text-muted-foreground max-w-2xl text-center mt-4 px-4"
             >
               Building intelligent, scalable applications that bridge innovation with real-world impact
@@ -137,7 +144,7 @@ const Hero = () => {
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.8, duration: 0.8 }}
+              transition={{ delay: 2, duration: 0.8 }}
               className="flex flex-col sm:flex-row gap-4 mt-8"
             >
               <a href="#projects" className="btn-primary">
