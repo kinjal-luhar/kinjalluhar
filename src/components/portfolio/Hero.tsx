@@ -79,7 +79,7 @@ const Hero = () => {
           delay: 1,
           duration: 0.8
         }} className="-mt-8 text-[8vw] md:text-[6vw] lg:text-[5vw] font-black tracking-tight text-center font-display">
-            <span className="gradient-text animate-gradient-text">Software Developer</span>
+            <span className="gradient-text animate-gradient-text text-5xl">Software Developer</span>
           </motion.h2>
 
           {/* Tagline */}
