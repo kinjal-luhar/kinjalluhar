@@ -45,7 +45,7 @@ const Hero = () => {
         {/* Main Hero Container */}
         <div className="relative flex flex-col items-center justify-center min-h-screen pt-24">
           
-          {/* Name Behind - KINJAL - Slides from LEFT */}
+          {/* Name Behind - KINJAL - Slides from LEFT (positioned higher) */}
           <motion.h1
             initial={{ x: "-150%", opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
@@ -54,13 +54,13 @@ const Hero = () => {
               ease: [0.25, 0.46, 0.45, 0.94], 
               delay: 0.3 
             }}
-            className="absolute top-[22%] left-0 right-0 text-[26vw] md:text-[20vw] lg:text-[16vw] font-black leading-none tracking-tighter text-center font-display select-none pointer-events-none"
+            className="absolute top-[15%] left-0 right-0 text-[22vw] md:text-[18vw] lg:text-[14vw] font-black leading-none tracking-tighter text-center font-display select-none pointer-events-none"
             style={{ zIndex: 1 }}
           >
             <span className="gradient-text animate-gradient-text">Kinjal</span>
           </motion.h1>
 
-          {/* Name Behind - LUHAR - Slides from RIGHT */}
+          {/* Name Behind - LUHAR - Slides from RIGHT (positioned below Kinjal) */}
           <motion.h1
             initial={{ x: "150%", opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
@@ -69,34 +69,36 @@ const Hero = () => {
               ease: [0.25, 0.46, 0.45, 0.94], 
               delay: 0.5 
             }}
-            className="absolute bottom-[28%] left-0 right-0 text-[26vw] md:text-[20vw] lg:text-[16vw] font-black leading-none tracking-tighter text-center font-display text-foreground select-none pointer-events-none"
+            className="absolute top-[28%] left-0 right-0 text-[22vw] md:text-[18vw] lg:text-[14vw] font-black leading-none tracking-tighter text-center font-display select-none pointer-events-none"
             style={{ zIndex: 1 }}
           >
-            Luhar
+            <span className="gradient-text animate-gradient-text">Luhar</span>
           </motion.h1>
 
-          {/* Photo - In Front with Vertical Swing Effect */}
+          {/* Photo - In Front with Pendulum Swing Effect */}
           <motion.div
             initial={{ opacity: 0, y: -150 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.4, ease: [0.34, 1.56, 0.64, 1], delay: 0.8 }}
-            className="relative flex flex-col items-center"
-            style={{ zIndex: 5 }}
+            className="relative flex flex-col items-center mt-8"
+            style={{ zIndex: 5, transformOrigin: "top center" }}
           >
-            {/* Swing ropes connecting to header */}
-            <div className="absolute -top-[180px] md:-top-[220px] lg:-top-[260px] left-[16%] w-[3px] h-[180px] md:h-[220px] lg:h-[260px] bg-gradient-to-b from-white/20 via-white/40 to-white/60 rounded-full" />
-            <div className="absolute -top-[180px] md:-top-[220px] lg:-top-[260px] right-[16%] w-[3px] h-[180px] md:h-[220px] lg:h-[260px] bg-gradient-to-b from-white/20 via-white/40 to-white/60 rounded-full" />
+            {/* Swing ropes connecting to header border */}
+            <div className="absolute -top-[100px] md:-top-[120px] lg:-top-[140px] left-[18%] w-[3px] h-[100px] md:h-[120px] lg:h-[140px] bg-gradient-to-b from-white/60 via-white/40 to-white/20 rounded-full" />
+            <div className="absolute -top-[100px] md:-top-[120px] lg:-top-[140px] right-[18%] w-[3px] h-[100px] md:h-[120px] lg:h-[140px] bg-gradient-to-b from-white/60 via-white/40 to-white/20 rounded-full" />
             
-            {/* Vertical Swing Animation (up and down like real swing) */}
+            {/* Pendulum Swing Animation (realistic arc motion) */}
             <motion.div
               animate={{ 
-                y: [0, -15, 0, 15, 0],
+                rotate: [0, 8, 0, -8, 0],
+                y: [0, -5, 0, -5, 0],
               }}
               transition={{ 
                 duration: 4, 
                 repeat: Infinity, 
                 ease: "easeInOut" 
               }}
+              style={{ transformOrigin: "top center" }}
             >
               {/* Glow effect behind image */}
               <div className="absolute inset-0 bg-gradient-to-b from-primary/30 via-accent/20 to-transparent blur-3xl scale-125" />
@@ -104,7 +106,7 @@ const Hero = () => {
               <img
                 src={heroPhoto}
                 alt="Kinjal Luhar - AI Engineer and Full-Stack Developer"
-                className="relative w-[340px] h-auto md:w-[480px] lg:w-[550px] object-contain drop-shadow-2xl"
+                className="relative w-[300px] h-auto md:w-[420px] lg:w-[480px] object-contain drop-shadow-2xl"
               />
             </motion.div>
           </motion.div>
