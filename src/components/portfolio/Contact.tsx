@@ -32,6 +32,8 @@ const Contact = () => {
           from_email: formData.email,
           subject: formData.subject,
           message: formData.message,
+          to_name: "Kinjal",
+          reply_to: formData.email,
         },
         "fqcguc-mPIb-JHEiW"
       );
@@ -211,7 +213,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Location</p>
-                  <p className="font-medium text-foreground">India</p>
+                  <p className="font-medium text-foreground">Ahmedabad, Gujarat, India</p>
                 </div>
               </motion.div>
             </div>

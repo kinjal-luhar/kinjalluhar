@@ -10,6 +10,7 @@ const projects = [
       "Intelligent health monitoring application leveraging machine learning for personalized health insights and predictions.",
     tech: ["Python", "TensorFlow", "React", "PostgreSQL"],
     gradient: "from-purple-500 to-pink-500",
+    videoId: "17OL5uiKzpLlfXr4uqhiecBynMhf8sfed",
   },
   {
     title: "Smart Kisan",
@@ -18,6 +19,7 @@ const projects = [
       "Comprehensive agricultural management platform with AI-driven crop recommendations and market price predictions.",
     tech: ["Django", "Machine Learning", "React Native", "MongoDB"],
     gradient: "from-green-500 to-teal-500",
+    videoId: "1jEBYcgrAJzgX4sG8ZdUvQ4xtKHF7GcGU",
   },
   {
     title: "QAssurify",
@@ -26,6 +28,7 @@ const projects = [
       "Automated quality assurance platform using AI to detect bugs, analyze code quality, and streamline testing workflows.",
     tech: ["Python", "OpenAI", "Next.js", "Docker"],
     gradient: "from-blue-500 to-cyan-500",
+    videoId: "1BiqUgWdBKZ9giXnZDfIVy1EDZeut2vNZ",
   },
   {
     title: "Minute-Mind",
@@ -34,6 +37,7 @@ const projects = [
       "AI-powered tool that automatically extracts action items, summaries, and key decisions from meeting recordings and transcripts.",
     tech: ["LLMs", "Whisper", "FastAPI", "React"],
     gradient: "from-orange-500 to-red-500",
+    videoId: "1XzXE2OWa9UJAZ2hC34rVrHyKbyGsHJuf",
   },
 ];
 
@@ -81,25 +85,35 @@ const Projects = () => {
               <div className={`absolute -inset-1 bg-gradient-to-r ${project.gradient} rounded-3xl blur-xl opacity-0 group-hover:opacity-30 transition-all duration-700`} />
               
               <div className="relative card-premium overflow-hidden">
-                {/* Video Placeholder */}
+                {/* Video Embed */}
                 <div className="relative aspect-video bg-gradient-to-br from-muted via-card to-muted overflow-hidden">
                   {/* Animated gradient background */}
                   <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-10 group-hover:opacity-20 transition-opacity duration-500`} />
                   
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <motion.div 
-                      animate={hoveredIndex === index ? { scale: 1.1 } : { scale: 1 }}
-                      className="text-center"
-                    >
+                  {project.videoId ? (
+                    <iframe
+                      src={`https://drive.google.com/file/d/${project.videoId}/preview`}
+                      className="w-full h-full"
+                      allow="autoplay; encrypted-media"
+                      allowFullScreen
+                      title={`${project.title} Demo`}
+                    />
+                  ) : (
+                    <div className="absolute inset-0 flex items-center justify-center">
                       <motion.div 
-                        whileHover={{ scale: 1.2 }}
-                        className={`w-16 h-16 rounded-full bg-gradient-to-br ${project.gradient} flex items-center justify-center mx-auto mb-3 shadow-lg`}
+                        animate={hoveredIndex === index ? { scale: 1.1 } : { scale: 1 }}
+                        className="text-center"
                       >
-                        <Play className="text-white ml-1" size={28} />
+                        <motion.div 
+                          whileHover={{ scale: 1.2 }}
+                          className={`w-16 h-16 rounded-full bg-gradient-to-br ${project.gradient} flex items-center justify-center mx-auto mb-3 shadow-lg`}
+                        >
+                          <Play className="text-white ml-1" size={28} />
+                        </motion.div>
+                        <p className="text-sm text-muted-foreground">Demo Coming Soon</p>
                       </motion.div>
-                      <p className="text-sm text-muted-foreground">Demo Coming Soon</p>
-                    </motion.div>
-                  </div>
+                    </div>
+                  )}
                 </div>
 
                 {/* Content */}
