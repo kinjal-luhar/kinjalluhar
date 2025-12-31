@@ -38,7 +38,7 @@ const Hero = () => {
           ease: [0.25, 0.46, 0.45, 0.94],
           delay: 0.3
         }} className="text-[11vw] md:text-[9vw] lg:text-[7vw] font-black leading-none tracking-tighter text-center font-display select-none">
-            <span className="gradient-text animate-gradient-text text-9xl">Kinjal Luhar</span>
+            <span className="gradient-text animate-gradient-text text-8xl">Kinjal Luhar</span>
           </motion.h1>
 
           {/* Photo - With swing animation */}
@@ -79,7 +79,7 @@ const Hero = () => {
           delay: 1,
           duration: 0.8
         }} className="-mt-8 text-[8vw] md:text-[6vw] lg:text-[5vw] font-black tracking-tight text-center font-display">
-            <span className="gradient-text animate-gradient-text text-5xl">Software Developer</span>
+            <span className="gradient-text animate-gradient-text text-6xl">Software Developer</span>
           </motion.h2>
 
           {/* Tagline */}
