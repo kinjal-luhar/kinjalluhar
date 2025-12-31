@@ -2,11 +2,6 @@ import { motion } from "framer-motion";
 import { ChevronDown, Download } from "lucide-react";
 import heroPhoto from "@/assets/photo-hero.png";
 
-const roles = [
-  "AI Engineer",
-  "Full-Stack Developer",
-];
-
 const Hero = () => {
   return (
     <section className="relative overflow-hidden">
@@ -50,21 +45,6 @@ const Hero = () => {
             <span className="gradient-text animate-gradient-text">Kinjal</span>
           </motion.h1>
 
-          {/* Name Behind - LUHAR - Slides from RIGHT */}
-          <motion.h1
-            initial={{ x: "150%", opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ 
-              duration: 1.8, 
-              ease: [0.25, 0.46, 0.45, 0.94], 
-              delay: 0.5 
-            }}
-            className="absolute top-[18%] left-0 right-0 text-[22vw] md:text-[18vw] lg:text-[15vw] font-black leading-none tracking-tighter text-center font-display select-none pointer-events-none"
-            style={{ zIndex: 1 }}
-          >
-            <span className="gradient-text animate-gradient-text">Luhar</span>
-          </motion.h1>
-
           {/* Photo - Vertical Pendulum Swing Effect attached to header */}
           <motion.div
             initial={{ opacity: 0, y: -200 }}
@@ -93,41 +73,38 @@ const Hero = () => {
               
               <img
                 src={heroPhoto}
-                alt="Kinjal Luhar - AI Engineer and Full-Stack Developer"
+                alt="Kinjal Luhar - Software Developer"
                 className="relative w-[380px] h-auto md:w-[520px] lg:w-[600px] object-contain drop-shadow-2xl"
               />
             </motion.div>
           </motion.div>
 
-          {/* Content Below Photo - Right after photo */}
-          <div className="relative z-20 flex flex-col items-center -mt-8">
-            {/* Rotating Roles - bigger and more visible */}
-            <motion.div
+          {/* Name - LUHAR - Under the photo */}
+          <motion.h1
+            initial={{ x: "150%", opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ 
+              duration: 1.8, 
+              ease: [0.25, 0.46, 0.45, 0.94], 
+              delay: 0.5 
+            }}
+            className="text-[22vw] md:text-[18vw] lg:text-[15vw] font-black leading-none tracking-tighter text-center font-display select-none pointer-events-none -mt-8"
+            style={{ zIndex: 10 }}
+          >
+            <span className="gradient-text animate-gradient-text">Luhar</span>
+          </motion.h1>
+
+          {/* Content Below Photo - Right after Luhar */}
+          <div className="relative z-20 flex flex-col items-center mt-4">
+            {/* Software Developer Title - Styled like name but smaller */}
+            <motion.h2
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.6, duration: 0.8 }}
-              className="h-14 overflow-hidden"
+              className="text-[8vw] md:text-[6vw] lg:text-[4vw] font-black tracking-tight text-center font-display"
             >
-              <motion.div
-                animate={{ y: ["0%", "-80%"] }}
-                transition={{
-                  duration: 8,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  repeatType: "reverse"
-                }}
-                className="flex flex-col"
-              >
-                {roles.map((role, index) => (
-                  <p
-                    key={index}
-                    className="h-14 flex items-center justify-center text-2xl md:text-3xl lg:text-4xl text-primary font-bold tracking-widest uppercase"
-                  >
-                    {role}
-                  </p>
-                ))}
-              </motion.div>
-            </motion.div>
+              <span className="gradient-text animate-gradient-text">Software Developer</span>
+            </motion.h2>
 
             {/* Tagline */}
             <motion.p
@@ -151,7 +128,9 @@ const Hero = () => {
               </a>
               <a 
                 href="/resume/Kinjal-Luhar-Resume.pdf" 
-                download="Kinjal-Luhar-Resume.pdf"
+                download
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn-outline flex items-center gap-2"
               >
                 <Download size={18} />
