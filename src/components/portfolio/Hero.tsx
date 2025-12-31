@@ -39,7 +39,7 @@ const Hero = () => {
               ease: [0.25, 0.46, 0.45, 0.94], 
               delay: 0.3 
             }}
-            className="text-[16vw] md:text-[14vw] lg:text-[12vw] font-black leading-none tracking-tighter text-center font-display select-none"
+            className="text-[11vw] md:text-[9vw] lg:text-[7vw] font-black leading-none tracking-tighter text-center font-display select-none"
           >
             <span className="gradient-text animate-gradient-text">Kinjal Luhar</span>
           </motion.h1>
@@ -49,7 +49,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: -100 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, ease: [0.34, 1.56, 0.64, 1], delay: 0.6 }}
-            className="relative -mt-2"
+            className="relative -mt-4"
           >
             {/* Vertical Swing Animation */}
             <motion.div
@@ -68,7 +68,7 @@ const Hero = () => {
               <img
                 src={heroPhoto}
                 alt="Kinjal Luhar - Software Developer"
-                className="relative w-[260px] h-auto md:w-[340px] lg:w-[400px] object-contain drop-shadow-2xl"
+                className="relative w-[340px] h-auto md:w-[420px] lg:w-[480px] object-contain drop-shadow-2xl"
               />
             </motion.div>
           </motion.div>
@@ -78,7 +78,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1, duration: 0.8 }}
-            className="-mt-4 text-[8vw] md:text-[6vw] lg:text-[5vw] font-black tracking-tight text-center font-display"
+            className="-mt-8 text-[8vw] md:text-[6vw] lg:text-[5vw] font-black tracking-tight text-center font-display"
           >
             <span className="gradient-text animate-gradient-text">Software Developer</span>
           </motion.h2>
