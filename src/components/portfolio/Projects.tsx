@@ -1,6 +1,10 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { Play, X, Image, Github, ExternalLink } from "lucide-react";
+import ssMedimate from "@/assets/ss-medimate.png";
+import ssSmartKisan from "@/assets/ss-smartkisan.png";
+import ssQassurify from "@/assets/ss-qassurify.png";
+import ssMinuteMind from "@/assets/ss-minutemind.png";
 
 const projects = [
   {
@@ -12,6 +16,7 @@ const projects = [
     gradient: "from-purple-500 to-pink-500",
     driveLink: "https://drive.google.com/file/d/17OL5uiKzpLlfXr4uqhiecBynMhf8sfed/view",
     coverImage: "https://images.unsplash.com/photo-1559757175-5700dde675bc?w=800&h=450&fit=crop",
+    screenshot: ssMedimate,
   },
   {
     title: "Smart Kisan",
@@ -22,6 +27,7 @@ const projects = [
     gradient: "from-green-500 to-teal-500",
     driveLink: "https://drive.google.com/file/d/1jEBYcgrAJzgX4sG8ZdUvQ4xtKHF7GcGU/view",
     coverImage: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&h=450&fit=crop",
+    screenshot: ssSmartKisan,
   },
   {
     title: "QAssurify",
@@ -32,6 +38,7 @@ const projects = [
     gradient: "from-blue-500 to-cyan-500",
     driveLink: "https://drive.google.com/file/d/1BiqUgWdBKZ9giXnZDfIVy1EDZeut2vNZ/view",
     coverImage: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=450&fit=crop",
+    screenshot: ssQassurify,
   },
   {
     title: "Minute-Mind",
@@ -42,6 +49,7 @@ const projects = [
     gradient: "from-orange-500 to-red-500",
     driveLink: "https://drive.google.com/file/d/1XzXE2OWa9UJAZ2hC34rVrHyKbyGsHJuf/view",
     coverImage: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=450&fit=crop",
+    screenshot: ssMinuteMind,
   },
 ];
 
@@ -197,11 +205,12 @@ const Projects = () => {
                 </motion.button>
               </div>
 
-              <div className="aspect-video bg-muted rounded-2xl flex items-center justify-center border border-border">
-                <div className="text-center text-muted-foreground">
-                  <Image size={48} className="mx-auto mb-3 opacity-50" />
-                  <p>Screenshots coming soon</p>
-                </div>
+              <div className="rounded-2xl overflow-hidden border border-border">
+                <img 
+                  src={projects[selectedProject].screenshot} 
+                  alt={`${projects[selectedProject].title} screenshot`}
+                  className="w-full h-auto object-contain"
+                />
               </div>
             </motion.div>
           </motion.div>
