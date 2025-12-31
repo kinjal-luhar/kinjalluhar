@@ -11,6 +11,7 @@ const projects = [
     tech: ["Python", "TensorFlow", "React", "PostgreSQL"],
     gradient: "from-purple-500 to-pink-500",
     driveLink: "https://drive.google.com/file/d/17OL5uiKzpLlfXr4uqhiecBynMhf8sfed/view",
+    coverImage: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800&h=450&fit=crop",
   },
   {
     title: "Smart Kisan",
@@ -20,6 +21,7 @@ const projects = [
     tech: ["Django", "Machine Learning", "React Native", "MongoDB"],
     gradient: "from-green-500 to-teal-500",
     driveLink: "https://drive.google.com/file/d/1jEBYcgrAJzgX4sG8ZdUvQ4xtKHF7GcGU/view",
+    coverImage: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&h=450&fit=crop",
   },
   {
     title: "QAssurify",
@@ -29,6 +31,7 @@ const projects = [
     tech: ["Python", "OpenAI", "Next.js", "Docker"],
     gradient: "from-blue-500 to-cyan-500",
     driveLink: "https://drive.google.com/file/d/1BiqUgWdBKZ9giXnZDfIVy1EDZeut2vNZ/view",
+    coverImage: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=450&fit=crop",
   },
   {
     title: "Minute-Mind",
@@ -38,6 +41,7 @@ const projects = [
     tech: ["LLMs", "Whisper", "FastAPI", "React"],
     gradient: "from-orange-500 to-red-500",
     driveLink: "https://drive.google.com/file/d/1XzXE2OWa9UJAZ2hC34rVrHyKbyGsHJuf/view",
+    coverImage: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=450&fit=crop",
   },
 ];
 
@@ -85,10 +89,18 @@ const Projects = () => {
               <div className={`absolute -inset-1 bg-gradient-to-r ${project.gradient} rounded-3xl blur-xl opacity-0 group-hover:opacity-30 transition-all duration-700`} />
               
               <div className="relative card-premium overflow-hidden">
-                {/* Video Link Button */}
+                {/* Video Link Button with Cover Image */}
                 <div className="relative aspect-video bg-gradient-to-br from-muted via-card to-muted overflow-hidden">
-                  {/* Animated gradient background */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-10 group-hover:opacity-20 transition-opacity duration-500`} />
+                  {/* Cover Image */}
+                  <img 
+                    src={project.coverImage} 
+                    alt={`${project.title} preview`}
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  
+                  {/* Overlay */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-30 group-hover:opacity-50 transition-opacity duration-500`} />
+                  <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors duration-300" />
                   
                   <a 
                     href={project.driveLink} 
@@ -102,11 +114,11 @@ const Projects = () => {
                     >
                       <motion.div 
                         whileHover={{ scale: 1.2 }}
-                        className={`w-20 h-20 rounded-full bg-gradient-to-br ${project.gradient} flex items-center justify-center mx-auto mb-3 shadow-lg`}
+                        className={`w-20 h-20 rounded-full bg-gradient-to-br ${project.gradient} flex items-center justify-center mx-auto mb-3 shadow-lg border-2 border-white/30`}
                       >
                         <Play className="text-white ml-1" size={32} />
                       </motion.div>
-                      <p className="text-sm text-foreground font-medium">Watch Demo</p>
+                      <p className="text-sm text-white font-medium drop-shadow-lg">Watch Demo</p>
                     </motion.div>
                   </a>
                 </div>
