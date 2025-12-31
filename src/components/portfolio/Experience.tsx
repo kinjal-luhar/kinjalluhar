@@ -4,32 +4,36 @@ import { Briefcase } from "lucide-react";
 
 const experiences = [
   {
+    role: "Python/Full-Stack Developer",
+    company: "Freelance",
+    period: "Nov 2022 - Present",
+    duration: "2+ Years",
+    description:
+      "Delivering custom web solutions, automation scripts, and AI-powered applications for diverse clients worldwide.",
+  },
+  {
     role: "AI & Tech Decentralized Intern",
     company: "BlockseBlock",
-    period: "2024",
+    period: "Oct 2024 - Dec 2024",
+    duration: "2 Months",
     description:
       "Developed blockchain-based solutions and AI integrations for decentralized applications.",
   },
   {
     role: "Software Development Engineer Intern",
     company: "Bluestock Fintech",
-    period: "2024",
+    period: "Sep 2024 - Oct 2024",
+    duration: "1 Month",
     description:
       "Built fintech solutions focusing on scalable backend systems and API development.",
   },
   {
     role: "Web Developer Intern",
     company: "Acmegrade",
-    period: "2023",
+    period: "Jul 2023 - Sep 2023",
+    duration: "2 Months",
     description:
       "Created responsive web applications and improved user experience across platforms.",
-  },
-  {
-    role: "Python/Full-Stack Developer",
-    company: "Freelance",
-    period: "2022 - Present",
-    description:
-      "Delivered custom web solutions, automation scripts, and AI-powered applications for diverse clients.",
   },
 ];
 
@@ -100,9 +104,14 @@ const Experience = () => {
                         <p className="text-primary font-medium">{exp.company}</p>
                       </div>
                     </div>
-                    <span className="text-sm text-muted-foreground bg-muted/50 px-4 py-1.5 rounded-full border border-border">
-                      {exp.period}
-                    </span>
+                    <div className="flex flex-col items-end gap-1">
+                      <span className="text-sm text-muted-foreground bg-muted/50 px-4 py-1.5 rounded-full border border-border">
+                        {exp.period}
+                      </span>
+                      <span className="text-xs text-primary font-medium">
+                        {exp.duration}
+                      </span>
+                    </div>
                   </div>
                   <p className="text-muted-foreground leading-relaxed">{exp.description}</p>
                 </div>
