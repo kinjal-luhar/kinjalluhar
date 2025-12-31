@@ -88,7 +88,7 @@ const Hero = () => {
               ease: [0.25, 0.46, 0.45, 0.94], 
               delay: 0.5 
             }}
-            className="text-[22vw] md:text-[18vw] lg:text-[15vw] font-black leading-none tracking-tighter text-center font-display select-none pointer-events-none -mt-8"
+            className="text-[22vw] md:text-[18vw] lg:text-[15vw] font-black leading-none tracking-tighter text-center font-display select-none pointer-events-none -mt-24 md:-mt-32 lg:-mt-40"
             style={{ zIndex: 10 }}
           >
             <span className="gradient-text animate-gradient-text">Luhar</span>
