@@ -39,7 +39,7 @@ const Hero = () => {
               ease: [0.25, 0.46, 0.45, 0.94], 
               delay: 0.3 
             }}
-            className="absolute top-[5%] left-0 right-0 text-[22vw] md:text-[18vw] lg:text-[15vw] font-black leading-none tracking-tighter text-center font-display select-none pointer-events-none"
+            className="absolute top-[5%] left-0 right-0 text-[16vw] md:text-[14vw] lg:text-[11vw] font-black leading-none tracking-tighter text-center font-display select-none pointer-events-none"
             style={{ zIndex: 1 }}
           >
             <span className="gradient-text animate-gradient-text">Kinjal</span>
@@ -74,7 +74,7 @@ const Hero = () => {
               <img
                 src={heroPhoto}
                 alt="Kinjal Luhar - Software Developer"
-                className="relative w-[380px] h-auto md:w-[520px] lg:w-[600px] object-contain drop-shadow-2xl"
+                className="relative w-[280px] h-auto md:w-[380px] lg:w-[420px] object-contain drop-shadow-2xl"
               />
             </motion.div>
           </motion.div>
@@ -88,7 +88,7 @@ const Hero = () => {
               ease: [0.25, 0.46, 0.45, 0.94], 
               delay: 0.5 
             }}
-            className="text-[22vw] md:text-[18vw] lg:text-[15vw] font-black leading-none tracking-tighter text-center font-display select-none pointer-events-none -mt-[28vw] md:-mt-[24vw] lg:-mt-[20vw]"
+            className="text-[16vw] md:text-[14vw] lg:text-[11vw] font-black leading-none tracking-tighter text-center font-display select-none pointer-events-none -mt-[20vw] md:-mt-[16vw] lg:-mt-[12vw]"
             style={{ zIndex: 10 }}
           >
             <span className="gradient-text animate-gradient-text">Luhar</span>
@@ -101,7 +101,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.6, duration: 0.8 }}
-              className="text-[8vw] md:text-[6vw] lg:text-[4vw] font-black tracking-tight text-center font-display"
+              className="text-[6vw] md:text-[4vw] lg:text-[3vw] font-black tracking-tight text-center font-display"
             >
               <span className="gradient-text animate-gradient-text">Software Developer</span>
             </motion.h2>
