@@ -39,34 +39,46 @@ const Hero = () => {
               ease: [0.25, 0.46, 0.45, 0.94], 
               delay: 0.3 
             }}
-            className="text-[12vw] md:text-[10vw] lg:text-[8vw] font-black leading-none tracking-tighter text-center font-display select-none"
+            className="text-[16vw] md:text-[14vw] lg:text-[12vw] font-black leading-none tracking-tighter text-center font-display select-none"
           >
             <span className="gradient-text animate-gradient-text">Kinjal Luhar</span>
           </motion.h1>
 
-          {/* Photo - Compact with no extra space */}
+          {/* Photo - With swing animation */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, ease: [0.34, 1.56, 0.64, 1], delay: 0.6 }}
-            className="relative my-4"
+            initial={{ opacity: 0, y: -100 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.2, ease: [0.34, 1.56, 0.64, 1], delay: 0.6 }}
+            className="relative -mt-2"
           >
-            {/* Glow effect behind image */}
-            <div className="absolute inset-0 bg-gradient-to-b from-primary/30 via-accent/20 to-transparent blur-3xl scale-110" />
-            
-            <img
-              src={heroPhoto}
-              alt="Kinjal Luhar - Software Developer"
-              className="relative w-[200px] h-auto md:w-[280px] lg:w-[320px] object-contain drop-shadow-2xl"
-            />
+            {/* Vertical Swing Animation */}
+            <motion.div
+              animate={{ 
+                y: [0, 15, 0, -10, 0],
+              }}
+              transition={{ 
+                duration: 2.5, 
+                repeat: Infinity, 
+                ease: "easeInOut" 
+              }}
+            >
+              {/* Glow effect behind image */}
+              <div className="absolute inset-0 bg-gradient-to-b from-primary/30 via-accent/20 to-transparent blur-3xl scale-110" />
+              
+              <img
+                src={heroPhoto}
+                alt="Kinjal Luhar - Software Developer"
+                className="relative w-[260px] h-auto md:w-[340px] lg:w-[400px] object-contain drop-shadow-2xl"
+              />
+            </motion.div>
           </motion.div>
 
-          {/* Software Developer Title - Prominent */}
+          {/* Software Developer Title - No gap */}
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1, duration: 0.8 }}
-            className="text-[8vw] md:text-[6vw] lg:text-[5vw] font-black tracking-tight text-center font-display"
+            className="-mt-4 text-[8vw] md:text-[6vw] lg:text-[5vw] font-black tracking-tight text-center font-display"
           >
             <span className="gradient-text animate-gradient-text">Software Developer</span>
           </motion.h2>
