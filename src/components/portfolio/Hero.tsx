@@ -11,7 +11,7 @@ const roles = [
 
 const Hero = () => {
   return (
-    <section className="relative overflow-hidden pt-24 pb-12">
+    <section className="relative overflow-hidden">
       {/* Animated background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/5" />
       
@@ -35,7 +35,7 @@ const Hero = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full">
         {/* Main Hero Container */}
-        <div className="relative flex flex-col items-center pt-8">
+        <div className="relative flex flex-col items-center">
           
           {/* Name Behind - KINJAL - Slides from LEFT */}
           <motion.h1
@@ -72,12 +72,12 @@ const Hero = () => {
             initial={{ opacity: 0, y: -200 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.4, ease: [0.34, 1.56, 0.64, 1], delay: 0.8 }}
-            className="relative flex flex-col items-center mt-4"
+            className="relative flex flex-col items-center"
             style={{ zIndex: 5 }}
           >
-            {/* Swing ropes connecting to header - positioned to touch header border */}
-            <div className="absolute -top-[80px] md:-top-[85px] left-[20%] w-[2px] h-[80px] md:h-[85px] bg-gradient-to-b from-foreground/80 via-foreground/50 to-foreground/20 rounded-full" />
-            <div className="absolute -top-[80px] md:-top-[85px] right-[20%] w-[2px] h-[80px] md:h-[85px] bg-gradient-to-b from-foreground/80 via-foreground/50 to-foreground/20 rounded-full" />
+            {/* Swing ropes connecting directly to header border */}
+            <div className="absolute -top-[68px] left-[22%] w-[3px] h-[68px] bg-gradient-to-b from-foreground via-foreground/60 to-foreground/30 rounded-full" />
+            <div className="absolute -top-[68px] right-[22%] w-[3px] h-[68px] bg-gradient-to-b from-foreground via-foreground/60 to-foreground/30 rounded-full" />
             
             {/* Vertical Only Swing Animation - pure up and down motion */}
             <motion.div
@@ -101,14 +101,14 @@ const Hero = () => {
             </motion.div>
           </motion.div>
 
-          {/* Content Below Photo - Compact layout */}
-          <div className="relative z-20 flex flex-col items-center mt-4">
-            {/* Rotating Roles - slower animation, more visible */}
+          {/* Content Below Photo - Right after photo */}
+          <div className="relative z-20 flex flex-col items-center -mt-2">
+            {/* Rotating Roles - bigger and more visible */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.6, duration: 0.8 }}
-              className="h-10 overflow-hidden"
+              className="h-14 overflow-hidden"
             >
               <motion.div
                 animate={{ y: ["0%", "-80%"] }}
@@ -123,7 +123,7 @@ const Hero = () => {
                 {roles.map((role, index) => (
                   <p
                     key={index}
-                    className="h-10 flex items-center justify-center text-lg md:text-xl text-primary font-semibold tracking-widest uppercase"
+                    className="h-14 flex items-center justify-center text-2xl md:text-3xl lg:text-4xl text-primary font-bold tracking-widest uppercase"
                   >
                     {role}
                   </p>
