@@ -94,9 +94,11 @@ const Projects = () => {
                     <iframe
                       src={`https://drive.google.com/file/d/${project.videoId}/preview`}
                       className="w-full h-full"
-                      allow="autoplay; encrypted-media"
+                      allow="autoplay; encrypted-media; fullscreen"
                       allowFullScreen
+                      sandbox="allow-scripts allow-same-origin allow-presentation"
                       title={`${project.title} Demo`}
+                      loading="lazy"
                     />
                   ) : (
                     <div className="absolute inset-0 flex items-center justify-center">
