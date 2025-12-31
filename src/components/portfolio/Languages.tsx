@@ -7,19 +7,16 @@ const languages = [
     name: "English",
     proficiency: "Full Professional Proficiency",
     level: 90,
-    flag: "🇬🇧",
   },
   {
     name: "Hindi",
     proficiency: "Native / Bilingual Proficiency",
     level: 100,
-    flag: "🇮🇳",
   },
   {
     name: "Gujarati",
     proficiency: "Native / Bilingual Proficiency",
     level: 100,
-    flag: "🇮🇳",
   },
 ];
 
@@ -61,15 +58,6 @@ const Languages = () => {
               whileHover={{ scale: 1.05, y: -5 }}
               className="glass-card p-6 rounded-2xl text-center group hover:border-primary/30 transition-all duration-300"
             >
-              {/* Flag */}
-              <motion.span 
-                className="text-5xl block mb-4"
-                animate={{ rotateY: [0, 10, 0, -10, 0] }}
-                transition={{ duration: 3, repeat: Infinity, delay: index * 0.5 }}
-              >
-                {lang.flag}
-              </motion.span>
-
               {/* Language name */}
               <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
                 {lang.name}
