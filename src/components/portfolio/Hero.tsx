@@ -11,7 +11,7 @@ const roles = [
 
 const Hero = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section className="relative overflow-hidden pt-24 pb-12">
       {/* Animated background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/5" />
       
@@ -35,7 +35,7 @@ const Hero = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full">
         {/* Main Hero Container */}
-        <div className="relative flex flex-col items-center justify-center min-h-screen pt-20">
+        <div className="relative flex flex-col items-center pt-8">
           
           {/* Name Behind - KINJAL - Slides from LEFT */}
           <motion.h1
@@ -79,14 +79,13 @@ const Hero = () => {
             <div className="absolute -top-[80px] md:-top-[85px] left-[20%] w-[2px] h-[80px] md:h-[85px] bg-gradient-to-b from-foreground/80 via-foreground/50 to-foreground/20 rounded-full" />
             <div className="absolute -top-[80px] md:-top-[85px] right-[20%] w-[2px] h-[80px] md:h-[85px] bg-gradient-to-b from-foreground/80 via-foreground/50 to-foreground/20 rounded-full" />
             
-            {/* Vertical Pendulum Swing Animation - swings up and down like real swing */}
+            {/* Vertical Only Swing Animation - pure up and down motion */}
             <motion.div
               animate={{ 
-                y: [0, 15, 0, -10, 0],
-                rotateZ: [0, 2, 0, -2, 0],
+                y: [0, 20, 0, -15, 0],
               }}
               transition={{ 
-                duration: 3, 
+                duration: 2.5, 
                 repeat: Infinity, 
                 ease: "easeInOut" 
               }}
@@ -173,7 +172,7 @@ const Hero = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2.5 }}
-        className="absolute bottom-6 left-1/2 -translate-x-1/2"
+        className="flex justify-center mt-8"
       >
         <motion.div
           animate={{ y: [0, 12, 0] }}
