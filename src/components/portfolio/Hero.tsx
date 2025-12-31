@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
-import heroPhoto from "@/assets/photo-hero.jpg";
+import heroPhoto from "@/assets/photo-hero.png";
 
 const roles = [
   "AI Engineer",
