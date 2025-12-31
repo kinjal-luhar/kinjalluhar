@@ -44,7 +44,7 @@ const Hero = () => {
               ease: [0.25, 0.46, 0.45, 0.94], 
               delay: 0.3 
             }}
-            className="absolute top-[8%] left-0 right-0 text-[18vw] md:text-[15vw] lg:text-[12vw] font-black leading-none tracking-tighter text-center font-display select-none pointer-events-none"
+            className="absolute top-[5%] left-0 right-0 text-[22vw] md:text-[18vw] lg:text-[15vw] font-black leading-none tracking-tighter text-center font-display select-none pointer-events-none"
             style={{ zIndex: 1 }}
           >
             <span className="gradient-text animate-gradient-text">Kinjal</span>
@@ -59,7 +59,7 @@ const Hero = () => {
               ease: [0.25, 0.46, 0.45, 0.94], 
               delay: 0.5 
             }}
-            className="absolute top-[18%] left-0 right-0 text-[18vw] md:text-[15vw] lg:text-[12vw] font-black leading-none tracking-tighter text-center font-display select-none pointer-events-none"
+            className="absolute top-[18%] left-0 right-0 text-[22vw] md:text-[18vw] lg:text-[15vw] font-black leading-none tracking-tighter text-center font-display select-none pointer-events-none"
             style={{ zIndex: 1 }}
           >
             <span className="gradient-text animate-gradient-text">Luhar</span>
