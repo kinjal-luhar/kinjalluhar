@@ -41,22 +41,66 @@ const Hero = () => {
             <span className="gradient-text animate-gradient-text text-8xl">Kinjal Luhar</span>
           </motion.h1>
 
-          {/* Photo - With swing animation */}
-          <motion.div initial={{
-          opacity: 0,
-          y: -100
-        }} animate={{
-          opacity: 1,
-          y: 0
-        }} transition={{
-          duration: 1.2,
-          ease: [0.34, 1.56, 0.64, 1],
-          delay: 0.6
-        }} className="relative -mt-4">
+          {/* Photo - Circular with border */}
+          <motion.div 
+            initial={{
+              opacity: 0,
+              scale: 0.8
+            }} 
+            animate={{
+              opacity: 1,
+              scale: 1
+            }} 
+            transition={{
+              duration: 1.2,
+              ease: [0.34, 1.56, 0.64, 1],
+              delay: 0.6
+            }} 
+            className="relative -mt-4"
+          >
             {/* Glow effect behind image */}
-            <div className="absolute inset-0 bg-gradient-to-b from-primary/30 via-accent/20 to-transparent blur-3xl scale-110" />
+            <motion.div 
+              animate={{
+                scale: [1, 1.05, 1],
+                opacity: [0.5, 0.8, 0.5]
+              }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+              className="absolute inset-0 bg-gradient-to-b from-primary/40 via-accent/30 to-primary/20 blur-3xl rounded-full scale-110" 
+            />
             
-            <img alt="Kinjal Luhar - Software Developer" className="relative w-[440px] h-auto md:w-[420px] lg:w-[480px] object-contain drop-shadow-2xl" src="/lovable-uploads/c3cb1b8d-825e-4d8d-a9ef-5f87e2bd3570.png" />
+            {/* Animated border ring */}
+            <motion.div
+              animate={{
+                rotate: 360
+              }}
+              transition={{
+                duration: 20,
+                repeat: Infinity,
+                ease: "linear"
+              }}
+              className="absolute inset-0 w-[280px] h-[280px] md:w-[320px] md:h-[320px] lg:w-[360px] lg:h-[360px] rounded-full border-2 border-transparent bg-gradient-to-r from-primary via-accent to-primary bg-origin-border"
+              style={{
+                background: "linear-gradient(var(--background), var(--background)) padding-box, linear-gradient(45deg, hsl(var(--primary)), hsl(var(--accent)), hsl(var(--primary))) border-box",
+                margin: "auto",
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0
+              }}
+            />
+            
+            {/* Image container */}
+            <div className="relative w-[280px] h-[280px] md:w-[320px] md:h-[320px] lg:w-[360px] lg:h-[360px] rounded-full overflow-hidden border-4 border-primary/30 shadow-2xl shadow-primary/20">
+              <img 
+                alt="Kinjal Luhar - Software Developer" 
+                className="w-full h-full object-cover object-top scale-[1.15]" 
+                src="/lovable-uploads/c3cb1b8d-825e-4d8d-a9ef-5f87e2bd3570.png" 
+              />
+            </div>
           </motion.div>
 
           {/* Software Developer Title - No gap */}
