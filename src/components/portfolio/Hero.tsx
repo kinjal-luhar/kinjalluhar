@@ -97,7 +97,7 @@ const Hero = () => {
             <div className="relative w-[280px] h-[280px] md:w-[320px] md:h-[320px] lg:w-[360px] lg:h-[360px] rounded-full overflow-hidden border-4 border-primary/30 shadow-2xl shadow-primary/20">
               <img 
                 alt="Kinjal Luhar - Software Developer" 
-                className="w-full h-full object-cover object-top scale-[1.15]" 
+                className="w-full h-full object-contain" 
                 src="/lovable-uploads/c3cb1b8d-825e-4d8d-a9ef-5f87e2bd3570.png" 
               />
             </div>
