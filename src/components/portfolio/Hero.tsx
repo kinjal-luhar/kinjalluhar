@@ -53,19 +53,10 @@ const Hero = () => {
           ease: [0.34, 1.56, 0.64, 1],
           delay: 0.6
         }} className="relative -mt-4">
-            {/* Vertical Swing Animation */}
-            <motion.div animate={{
-            y: [0, 15, 0, -10, 0]
-          }} transition={{
-            duration: 2.5,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}>
-              {/* Glow effect behind image */}
-              <div className="absolute inset-0 bg-gradient-to-b from-primary/30 via-accent/20 to-transparent blur-3xl scale-110" />
-              
-              <img alt="Kinjal Luhar - Software Developer" className="relative w-[440px] h-auto md:w-[420px] lg:w-[480px] object-contain drop-shadow-2xl" src="/lovable-uploads/c3cb1b8d-825e-4d8d-a9ef-5f87e2bd3570.png" />
-            </motion.div>
+            {/* Glow effect behind image */}
+            <div className="absolute inset-0 bg-gradient-to-b from-primary/30 via-accent/20 to-transparent blur-3xl scale-110" />
+            
+            <img alt="Kinjal Luhar - Software Developer" className="relative w-[440px] h-auto md:w-[420px] lg:w-[480px] object-contain drop-shadow-2xl" src="/lovable-uploads/c3cb1b8d-825e-4d8d-a9ef-5f87e2bd3570.png" />
           </motion.div>
 
           {/* Software Developer Title - No gap */}
