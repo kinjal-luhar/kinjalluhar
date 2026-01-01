@@ -5,12 +5,11 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="py-12 border-t border-border relative overflow-hidden">
+    <footer className="py-8 border-t border-border relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent" />
       
       <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
