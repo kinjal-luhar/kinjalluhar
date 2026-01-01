@@ -5,15 +5,15 @@ import skillsPhoto from "@/assets/photo-skills.jpg";
 const skillCategories = [
   {
     title: "AI & Machine Learning",
-    skills: ["Python", "TensorFlow", "PyTorch", "LLMs", "OpenAI", "Scikit-learn"],
+    skills: ["Python", "TensorFlow", "PyTorch", "LLMs", "OpenAI"],
   },
   {
     title: "Blockchain & Web3",
-    skills: ["Solidity", "Web3.js", "Smart Contracts", "dApps", "Ethereum"],
+    skills: ["Web3.js", "Smart Contracts", "dApps"],
   },
   {
     title: "Languages",
-    skills: ["Python", "JavaScript", "TypeScript", "Java", "C++", "PHP"],
+    skills: ["Python", "JavaScript", "TypeScript", "Java", "C++"],
   },
   {
     title: "Frameworks",
@@ -21,7 +21,7 @@ const skillCategories = [
   },
   {
     title: "Databases",
-    skills: ["PostgreSQL", "MongoDB", "MySQL", "Redis", "Firebase"],
+    skills: ["PostgreSQL", "MySQL"],
   },
   {
     title: "Tools & Platforms",
